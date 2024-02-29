@@ -1,0 +1,21 @@
+name: development
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  repo-level:
+     runs-on: self-hosted
+     steps: 
+       - name: list the variables at repo lvel
+         run: |
+            echo  "Hello ! The Variable at repo level are as follows:
+                        ${{ vars.DEV_ENV_VAR }}
+  environment-level:
+     runs-on: self-hosted
+     steps: 
+       - name: list the variables at repo lvel
+         run: |
+            echo  "Hello ! The Variable at environment-level  are as follows:
+                        ${{ vars.DEV_ENV_VAR }}
