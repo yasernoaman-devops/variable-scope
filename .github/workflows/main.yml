@@ -14,6 +14,8 @@ jobs:
                         
   environment-level:
      runs-on: self-hosted
+     environment:
+        name: DEV
      steps: 
        - name: list the variables at repo lvel
          run: |
