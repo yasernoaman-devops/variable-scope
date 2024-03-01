@@ -8,14 +8,8 @@ jobs:
   repo-level:
      runs-on: self-hosted
      steps: 
-       - name: list the variables at repo lvel
+       - name: list the variables at repo level
          run: |
-            echo  "Hello ! The Variable at repo level is ${{ vars.DEV_ENV_VAR }}"                        
-  environment-level:
-     needs: repo-level
-     runs-on: self-hosted
-     steps: 
-       - name: list the variables at environment  lvel
-         run: |
-            echo  "Hello ! The Variable at environment-level is ${{ vars.DEV_ENV_VAR }}"
+            echo  "Hello ! The Variable at repo-level is ${{ vars.DEV_ENV_VAR }}"                        
+
                         
