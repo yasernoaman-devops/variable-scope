@@ -4,13 +4,18 @@ on:
     branches:
       - main
   workflow_dispatch:
+env:
+  DATABASE_USERNAME: ${{ secrets.HCE_DB_USER_NAME }}
 jobs:
   repo-level:
      runs-on: self-hosted
+     env:
+         job-level: noaman
      steps: 
        - name: list the variables at repo level
          run: |
-            echo  "Hello ! The Variable at repo-level is ${{ vars.DEV_ENV_VAR }}"                        
+            echo  "Hello ! The Variable at repo-level is ${{ vars.DEV_ENV_VAR }}"
+            echo " $job-level lives in Hyderabad
   environment-level:
      needs: repo-level
      environment: DEV
@@ -19,4 +24,5 @@ jobs:
        - name: list the variables at environment  level
          run: |
             echo  "Hello ! The Variable at environment-level is ${{ vars.DEV_ENV_VAR }}"
+            echo $DATABASE_USERNAME
                         
