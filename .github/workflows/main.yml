@@ -15,7 +15,7 @@ jobs:
        - name: list the variables at repo level
          run: |
             echo  "Hello ! The Variable at repo-level is ${{ vars.DEV_ENV_VAR }}"
-            echo " $job-level lives in Hyderabad "
+            echo " ${{ env.job-level }} lives in Hyderabad "
   environment-level:
      needs: repo-level
      environment: DEV
